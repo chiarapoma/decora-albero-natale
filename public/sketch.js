@@ -4,6 +4,12 @@ clientSocket.on("connect", newConnection);
 
 clientSocket.on("mouseBroadcast", newBroadcast);
 
+let myImage;
+
+function preload() {
+  myImage = loadImage("./assets/albero.jpg"); // percorso per trovare file
+}
+
 function newConnection() {
   console.log(clientSocket.id);
 }
@@ -12,17 +18,26 @@ function newBroadcast(data) {
   console.log(data);
 
   fill("orange");
-  circle(data.x, data.y, 10);
+
+  circle(data.x, data.y, 20);
 }
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background("black");
+  background("myImage");
+  imageMode(CENTER); // posiziona dal centro dell'immagine
+  image(
+    myImage,
+    width / 2, //posizione dell'immagine al centro
+    height / 2
+  );
 }
 
 function draw() {
   fill("red");
+}
 
+function mouseClicked() {
   circle(mouseX, mouseY, 20);
 }
 
