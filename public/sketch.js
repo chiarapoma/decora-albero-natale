@@ -7,7 +7,7 @@ clientSocket.on("mouseBroadcast", newBroadcast);
 let myImage;
 
 function preload() {
-  myImage = loadImage("./assets/albero.jpg"); // percorso per trovare file
+  myImage = loadImage("./public/assets/albero.jpg"); // percorso per trovare file
 }
 
 function newConnection() {
@@ -24,7 +24,7 @@ function newBroadcast(data) {
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background("myImage");
+
   imageMode(CENTER); // posiziona dal centro dell'immagine
   image(
     myImage,
