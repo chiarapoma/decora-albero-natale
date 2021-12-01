@@ -8,7 +8,8 @@ let myImage;
 
 function preload() {
   myImage = loadImage("./assets/albero_neve.png"); // percorso per trovare file
-  font = loadFont("assets/The Perfect Christmas.ttf");
+  font0 = loadFont("assets/The Perfect Christmas.ttf");
+  font1 = loadFont("assets/Poppins-Regular.ttf");
 }
 
 function newConnection() {
@@ -33,11 +34,18 @@ function setup() {
     height / 1.5
   );
 
-  textFont(font, 100);
+  textFont(font0, 100);
   textAlign(CENTER);
   fill("red");
   //stroke(255);
   text("Decorate the Christmas tree", windowWidth / 2, 890);
+
+  textFont(font1, 100);
+  textSize(20);
+  textAlign(CENTER);
+  fill("grey");
+  //stroke(255);
+  text("click on the tree to start", windowWidth / 2, 950);
 }
 
 function draw() {
@@ -46,9 +54,6 @@ function draw() {
 
 function mouseClicked() {
   circle(mouseX, mouseY, 30);
-}
-
-function mouseMoved() {
   let message = {
     //object contain mouse positzion
     x: mouseX,
